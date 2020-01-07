@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Statix",
+	"patterns": [
+		{ "include": "#comments" },
+		{ "include": "#keywords" },
+		{ "include": "#identifiers" },
+		{ "include": "#constructors" },
+		{ "include": "#strings" }
+	],
+	"repository": {
+		"comments": {
+			"patterns": [{
+				"name": "comment.line.statix",
+				"match": "//.*$"
+			}, {
+				"name": "comment.block.statix",
+				"begin": "/\\*",
+				"end": "\\*/\\n?",
+				"captures": {
+					"0": {
+						"name": "punctuation.definition.comment.statix"
+					}
+				}
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.statix",
+				"match": "\\b(module|imports|signature|rules|constraints|coinductive|true|false|new|try|relations|relation|namespaces|name\\-resolution|labels|namespace|e|query|sorts|constructors|_|mod|div|error|warning|note|constraint|maps|with|of|in|and|filter|min|resolve)\\b"
+			},{
+				"name": "keyword.operator.statix",
+				"match": "(:\\-|==|!=|:=|<|0|~|&|list\\(|@|\\*|\\-|min\\(|max\\(|\\||\\[|:|\\,|\\.|\\(|=|\\{|\\}|astId\\(|\\)|\\?|\\+|\\|\\->|\\->|pathMatch\\[|pathLt\\[|\\])"
+			}]
+		},
+		"identifiers": {
+			"patterns": [{
+				"name": "entity.name.statix",
+				"match": "\\b[a-z][a-zA-Z0-9_\\-']*\\b"
+			}]
+		},
+		"constructors": {
+			"patterns": [{
+				"name": "entity.name.type.statix",
+				"match": "\\b[A-Z][a-zA-Z0-9_\\-']*\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.statix",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.statix",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.statix"
+	}

@@ -1,0 +1,36 @@
+{
+    "name": "statix-vscode",
+    "displayName": "Statix Language",
+    "description": "Statix language extension for VS Code.",
+    "version": "0.1.0",
+    "publisher": "Virtlink",
+    "repository": "https://github.com/Virtlink/statix-vscode",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "statix",
+                "aliases": [
+                    "Statix",
+                    "statix"
+                ],
+                "extensions": [
+                    ".stx"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "statix",
+                "scopeName": "source.statix",
+                "path": "./Syntaxes/statix.tmLanguage.json"
+            }
+        ]
+    }
+}
